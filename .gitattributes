@@ -1,0 +1,20 @@
+# Archive policy only: this neither deletes files nor sanitizes pushed history.
+/to-be-moved export-ignore
+/to-be-moved/** export-ignore
+/.claude export-ignore
+/.claude/** export-ignore
+/.jj export-ignore
+/.jj/** export-ignore
+/Alexa_DS_Resume_2page.tex export-ignore
+/Applied_Science_LLM_Resume.tex export-ignore
+/Applied_Science_ML_Resume.json export-ignore
+/Applied_Science_ML_Resume.md export-ignore
+/Applied_Science_ML_Resume.pdf export-ignore
+/Applied_Science_ML_Resume.tex export-ignore
+/Pharma_Industry_CV.tex export-ignore
+/Questions.md export-ignore
+/resume-comments.md export-ignore
+/ah-review-test.md export-ignore
+/chapter_new.txt export-ignore
+/README-Original.md export-ignore
+/REPORT-Original.md export-ignore

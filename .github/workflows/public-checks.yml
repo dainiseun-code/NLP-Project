@@ -1,0 +1,49 @@
+name: Public software checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-checks:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.10.4"
+          python-version: "3.11"
+          enable-cache: false
+      - name: Install the public environment only
+        run: uv sync --locked
+      - name: Validate the public data and CLI
+        run: |
+          uv run --locked messaging-nlp --help
+          uv run --locked messaging-nlp validate-public data/stage1-v1/public --owner-id owner_001
+      - name: Lint and format
+        run: |
+          uv run --locked ruff check src/messaging_nlp tests examples docs/figures/render.py
+          uv run --locked ruff format --check src/messaging_nlp tests examples docs/figures/render.py
+      - name: Public software tests
+        run: uv run --locked pytest -q
+      - name: Fictional model-free example
+        run: uv run --locked python examples/model_free_demo.py
+      - name: Deterministic figures
+        run: |
+          uv run --locked python docs/figures/render.py
+          git diff --exit-code -- docs/figures

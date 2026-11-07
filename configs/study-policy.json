@@ -1,0 +1,296 @@
+{
+  "schema_version": "nlp3-study-policy-v1",
+  "study_id": "standalone-development-v1",
+  "status": "stage1_accepted_not_execution_authorization",
+  "data": {
+    "selection_manifest": "data/stage1-v1/selection-manifest.json",
+    "public_root": "data/stage1-v1/public",
+    "evaluator_root": "data/stage1-v1/evaluator",
+    "roster": "data/stage1-v1/evaluator/roster.jsonl",
+    "task_requirements": "data/stage1-v1/evaluator/task-requirements.jsonl",
+    "task_requirement_version": "stage1-source-authored-v4",
+    "source_only_comparison_ledger": "data/stage1-v1/evaluator/provenance/requirements/source-only-comparison-v4.jsonl",
+    "source_annotation_adjudication": "data/stage1-v1/evaluator/provenance/requirements/v3-to-v4-adjudication.json",
+    "pending_content_scenarios": [],
+    "nondraft_recipient_metadata": "intended eventual draft recipient only; clarify addresses owner; unsupported requires no recipient selection or mention",
+    "human_review_status_boundary": "retained pending spellings are not completed human review; preserve originals and normalize explicitly at scoring; unknown statuses fail closed",
+    "split": "development",
+    "source_kind": "synthetic_model_reviewed",
+    "human_review_status": "pending",
+    "optional_gold_diagnostic": "deferred",
+    "variants": [
+      "clean",
+      "typo",
+      "asr"
+    ],
+    "pairing_unit": "scenario_id",
+    "uncertainty_cluster": "family_id"
+  },
+  "behavior": {
+    "single_turn": true,
+    "prior_assistant_state": false,
+    "draft_only": true,
+    "live_integrations": false,
+    "send": false,
+    "request_preserved_in_all_conditions": true,
+    "entity_instruction": "When entity annotations are provided, treat their span/type labels as correct when interpreting the request.",
+    "entity_authority": "span_and_type_only; identities and facts require eligible source support",
+    "actions": [
+      "draft",
+      "clarify",
+      "unsupported"
+    ],
+    "unsupported_send_policy": "explicit immediate sending request => unsupported reason-only with true no-send reason; no fallback draft or selection",
+    "missing_fact_policy": "clarify only facts necessary for the requested content; questions may ask unknown facts",
+    "context_as_data": true,
+    "unsupported_payload": "reason only; no draft, selection or clarification payload; no cancelled action"
+  },
+  "software_contract": {
+    "source_distinct_facts": "multiple name and message_text facts are permitted when source-distinct",
+    "duplicate_facts": "reject exact duplicate field/value/source-set facts; source ordering is immaterial",
+    "selected_event_fields": "title, start, end and location remain single-valued",
+    "validation_boundary": "literal source equality and eligibility checks do not validate semantic roles or arbitrary prose; Stage3 owns that layer",
+    "review_status": "Pro software follow-up and fresh stable DATA/PROTOCOL review completed without material findings; primary accepted Stage1 after full model-free gate; not outcome review"
+  },
+  "conditions": {
+    "names": [
+      "baseline",
+      "B",
+      "A+B"
+    ],
+    "extra_arms_authorized": false,
+    "baseline": "original request drives search, no encoder annotation",
+    "B": "encoder-assisted Python preprocessing; original request plus results and sources",
+    "A+B": "same saved extraction and exact Python result bytes as B plus extracted entity list",
+    "shared_entity_extraction": true,
+    "baseline_extraction_f1": null,
+    "order_rule": "sort scenario_id ascending by Unicode code points; scenario index i; variant offsets clean=0,typo=2,asr=4; permutation_index=(i+offset)%6; persist condition_order per message before outputs",
+    "permutations": [
+      [
+        "baseline",
+        "B",
+        "A+B"
+      ],
+      [
+        "baseline",
+        "A+B",
+        "B"
+      ],
+      [
+        "B",
+        "baseline",
+        "A+B"
+      ],
+      [
+        "B",
+        "A+B",
+        "baseline"
+      ],
+      [
+        "A+B",
+        "baseline",
+        "B"
+      ],
+      [
+        "A+B",
+        "B",
+        "baseline"
+      ]
+    ],
+    "matched_fields": [
+      "model_identity",
+      "decoding",
+      "request_clock",
+      "source_access",
+      "output_contract",
+      "common_instructions",
+      "source_eligibility_rules"
+    ],
+    "B_AB_identical_artifacts": [
+      "extraction",
+      "python_results",
+      "supporting_records"
+    ],
+    "variant_offsets": {
+      "clean": 0,
+      "typo": 2,
+      "asr": 4
+    }
+  },
+  "temporal": {
+    "instant_rule": "parse source offset-bearing ISO timestamp as absolute instant; preserve original string; convert with IANA request time_zone for civil dates/times",
+    "offset_zone_mismatch": "valid absolute instants accepted; convert with pinned timezone bytes; never force a presumed source/timezone mismatch",
+    "week_start": "Sunday 00:00 local inclusive",
+    "week_end": "next Sunday 00:00 local exclusive",
+    "later_this_week": "event_start > request_instant and event_start < local_week_end; calendar dates constructed in IANA zone, never fixed UTC-duration week",
+    "dst": "calendar-date boundaries with timezone-aware local midnight, compared as instants",
+    "eligibility_cutoff": "min(snapshot.timestamp, request.request_time) as instants",
+    "history_eligibility": "snapshot membership AND available_at <= cutoff AND timestamp <= cutoff",
+    "version_policy": "for every listed contact/event record, compute latest version across ALL exported versions for that logical ID with available_at <= cutoff, not only snapshot members; reject if snapshot lists a stale version or omits the newer available version in favor of old; future versions do not invalidate earlier snapshots",
+    "explicit_clock_conflict": "request local wall-clock assertion that contradicts selected calendar instant requires targeted clarification; do not certify equivalence merely from source displayed offset",
+    "source_inconsistency_example": {
+      "source_request_time": "2026-11-02T09:00:00-07:00",
+      "canonical_request_time": "2026-11-02T09:00:00-07:00",
+      "source_event_start": "2026-11-03T15:00:00-07:00",
+      "canonical_event_start": "2026-11-03T15:00:00-07:00",
+      "note": "prior primary -08 example rejected; source consistent with current Vancouver permanent UTC-07"
+    },
+    "timezone_identity": {
+      "identity_file": "data/stage1-v1/provenance/timezones/identity.json",
+      "tzif_path": "data/stage1-v1/provenance/timezones/America_Vancouver.tzif",
+      "tzif_sha256": "e182e20ec67c46a7dd0aedb3d45fb1395edcb14ff2af2ac694a5776b307bed31",
+      "tzdb_version": "2026e",
+      "use": "load retained TZif bytes with ZoneInfo.from_file, or fail closed if implementation cannot honor the binding; never silently use an older/different host tzdb",
+      "request_name_catalog_prerequisite": "Request construction requires host IANA-name catalog recognition; retained TZif supplies frozen offsets, not the host offset rules. Missing host name fails closed; Stage5 readiness must record this prerequisite."
+    }
+  },
+  "decoding": {
+    "temperature": 0,
+    "enable_thinking": false,
+    "max_input_tokens": 2048,
+    "max_output_tokens": 1024,
+    "seed": 42,
+    "call_timeout_seconds": 120,
+    "truncation": false,
+    "prompt_fit_required_before_freeze": true,
+    "provenance": "Stage6 user-authorized revision raises output256 to1024 for the complete JSON envelope; input2048, greedy/no-thinking/seed42 and120second call ceiling unchanged. Prior configuration/run remains immutable under the original Stage5 freeze."
+  },
+  "preparation": {
+    "max_records": 8,
+    "packing_version": "stage5-full-prompt-fit-v2",
+    "reason": "The actual untruncated tokenizer-only check found 196/369 prompts over 2048 (maximum4037) with40 joined records. Use one fixed8-record bound for all conditions/cases before generation; preserve whole source records, atomic joins/ambiguity groups, original requests and identical B/A+B common evidence. No gold or Qwen outcomes informed this change.",
+    "prior_artifacts": "runs/stage5-preparation-20261028/materialized-actual-v1 and tokenizer-actual-v1 retained unchanged; no encoder rerun"
+  },
+  "resources": {
+    "max_local_model_processes": 1,
+    "max_tree_rss_bytes": 3758096384,
+    "max_swap_growth_bytes": 268435456,
+    "min_free_disk_bytes": 16106127360,
+    "memory_warning_seconds": 10,
+    "revision_authority": "docs/stage6-revision-authorization-20261028.json",
+    "sensor_failure": "stop and preserve partial evidence",
+    "resource_failure": "stop and preserve partial evidence",
+    "retry": false,
+    "repair_invalid_output": false,
+    "opening_record": "docs/stage1-budget-opening.json",
+    "opening_record_sha256": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d",
+    "active_usage_reset": {
+      "record": "docs/budget-usage-reset-20261027.json",
+      "sha256": "4620b44ee99596ab087e690be848bde07da883ba60ee3acd90aa64b0b9673a9f",
+      "reset_id": "development-usage-reset-20261027T222217Z",
+      "opening_generations": 0,
+      "opening_seconds": 0,
+      "unchanged_storage_bytes": 78719238,
+      "development_generation_cap": 3000,
+      "development_seconds_cap": 21600,
+      "application": "user-authorized exactly-once active usage epoch; preserve historical reservations, storage and version registrations; all post-reset charges remain charged",
+      "prior_policy_bytes": "docs/provenance/stage1-study-policy-accepted.json"
+    },
+    "account": "stage3",
+    "remaining_generation_ceiling_at_opening": 946,
+    "remaining_seconds_ceiling_at_opening": 10525,
+    "preparation_seconds_share_remaining_ceiling": true,
+    "new_cap_expansion": false,
+    "borrow_training_account": false,
+    "reset_prior_charges": false,
+    "reset_prior_charges_interpretation": "Historical reservation actuals remain immutable. The separately bound explicit user reset changes active generation/seconds usage through a one-time new epoch, not by rewriting prior records.",
+    "freshness_reconciliation_owner": "Astra",
+    "stage1_model_execution_authorized": false,
+    "stage5_gate": "explicit authorization for encoder preparation, recheck opening and all later charges; actual full-prompt fit and resource/time feasibility required",
+    "stage6_gate": "Stage5 frozen package, changed OS boot identity, explicit user execution authorization; charge before launch",
+    "provenance": "primary decision retained previous guard RSS/swap and minimum disk limits; no archive ledger replay by this worker",
+    "wall_time_feasibility": "369 planned calls fit the opening generation count, not a wall-time guarantee; per-call 120-second ceilings cannot certify fit within 10525 seconds. Stage5 must seal concrete supervised duration/reservation policy after preparation; cap stop retains an incomplete run, never cap expansion, silent case drop or retry."
+  },
+  "semantic_review": {
+    "procedure_version": "blinded-content-bound-v1",
+    "freeze_required_before_generation": true,
+    "all_conditions": true,
+    "all_variants": true,
+    "all_categories": true,
+    "judges": [
+      {
+        "judge_id": "judge-sol-v1",
+        "configured_alias": "gpt-6.1-sol",
+        "effort": "high",
+        "resolved_model_receipt": "required_at_execution"
+      },
+      {
+        "judge_id": "judge-deepseek-v1",
+        "configured_alias": "deepseek-v4-pro",
+        "profile": "deepseek-pro",
+        "effort": "high",
+        "resolved_model_receipt": "required_at_execution"
+      }
+    ],
+    "fail_closed_on_unavailable_identity": true,
+    "silent_substitution": false,
+    "blinding": "fresh isolated judge sessions receive request, full eligible context, frozen requirements/rubric and one anonymous output; no condition/model labels, sibling outputs, other judgments, repository or development conversation",
+    "packet_bindings": [
+      "request_bytes_sha256",
+      "eligible_context_sha256",
+      "requirements_sha256",
+      "rubric_sha256",
+      "raw_output_sha256",
+      "parsed_output_sha256",
+      "judge_identity_receipt_sha256"
+    ],
+    "rubric_dimensions": [
+      "expected_action",
+      "recipient_and_roles",
+      "required_meaning",
+      "forbidden_meaning_absent",
+      "selected_event_and_normalized_facts",
+      "support_and_authorship",
+      "actual_clarification_or_unsupported_reason"
+    ],
+    "dimension_verdicts": [
+      "pass",
+      "fail",
+      "unresolved"
+    ],
+    "required_evidence": "quote exact candidate output text and eligible source IDs for each verdict; absence must identify omitted requirement; no unsupported global pass",
+    "disagreement": "retain both independent judgments; Astra adjudicates against frozen packet evidence with written reason; unresolved dimension never passes; never replace original judgment",
+    "missing_or_stale_review": "semantic success unmeasured, never pass",
+    "development_review_is_outcome_review": false,
+    "annotation_status": "all123 variants independently source-only model-annotated by native DeepSeek/deepseek-flash/high without proposed labels or outputs; primary adjudications integrated in v4 including nine generic topical-question requirements; no active pending content decisions; original judgments and v3 history retained; primary Stage1 acceptance complete after independent development reviews; human review and execution freeze pending; not outcome review",
+    "execution_authorized_by_stage1": false
+  },
+  "analysis": {
+    "extract_exact_span_type": "shared B/A+B extraction only; exact Unicode code-point start/end/type; baseline not applicable",
+    "separate_outcomes": [
+      "extraction",
+      "preprocessing_evidence_coverage",
+      "action",
+      "recipient",
+      "required_content",
+      "clarification_reason",
+      "unsupported_reason",
+      "semantic_review",
+      "measured_cost"
+    ],
+    "failure_denominator": "timeouts, invalid and missing attempted outputs stay in planned denominator; no silent retry or dropped cases",
+    "no_execution": "not a measured zero",
+    "unresolved_semantic": "unmeasured; not credited success",
+    "false_clarification": "error when eligible evidence resolves the case",
+    "paired_analysis": "retain scenario/variant condition pairing; uncertainty clustered by family with paired resamples shared across conditions; Stage4B specifies concrete statistical details and Stage5 seals them BEFORE generation, never after inspecting outputs",
+    "cost": "encoder/search preparation separate from Qwen response cost; no inferred live end-to-end latency or sum of medians",
+    "report_measurements": "Astra confirms user authorization and whether authoritative values already exist before any new calculations",
+    "claims": "synthetic model-reviewed development evidence; no historical assistant score import, heldout claim or human annotation claim"
+  },
+  "prompt_identity_boundary": {
+    "preserve_original_source_ids_internally": true,
+    "omit_from_model_and_blinded_review_prompts": [
+      "message_id",
+      "scenario_id",
+      "family_id",
+      "context_snapshot_id",
+      "category_tags",
+      "source_provenance_metadata",
+      "descriptive_source_record_ids"
+    ],
+    "evidence_id_rule": "opaque tokens only; save reversible token-to-original source record mapping outside prompt; neither token choice nor order may encode category/condition",
+    "request_text_rule": "exact original request text retained; only metadata IDs omitted/aliased",
+    "enforcement_stage": "Stage3 prompt renderer and Stage4B blinded packet renderer; internal loader retains exact stable IDs",
+    "freeze_before_outputs": true
+  }
+}

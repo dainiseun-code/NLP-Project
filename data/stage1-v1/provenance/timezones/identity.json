@@ -1,0 +1,16 @@
+{
+  "schema_version": "nlp3-timezone-identity-v1",
+  "time_zone": "America/Vancouver",
+  "tzdb_version": "2026e",
+  "tzif_path": "data/stage1-v1/provenance/timezones/America_Vancouver.tzif",
+  "tzif_sha256": "e182e20ec67c46a7dd0aedb3d45fb1395edcb14ff2af2ac694a5776b307bed31",
+  "source_origin": "host /usr/share/zoneinfo/America/Vancouver; retained bytes are portable authority",
+  "normalization_rule": "parse original offset-bearing instant; convert using ZoneInfo.from_file of the pinned TZif, not ambient host substitution",
+  "primary_authority": "primary confirmed actual ZoneInfo and official B.C. source; earlier -08 examples rejected",
+  "official_source": "https://news.gov.bc.ca/releases/2026AG0013-000209",
+  "observations": {
+    "2026-11-02T09:00:00-07:00": "2026-11-02T09:00:00-07:00",
+    "2026-11-03T15:00:00-07:00": "2026-11-03T15:00:00-07:00",
+    "2026-11-03T16:00:00-07:00": "2026-11-03T16:00:00-07:00"
+  }
+}

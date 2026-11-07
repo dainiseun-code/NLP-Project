@@ -1,0 +1,395 @@
+{
+  "schema_version": "nlp3-data-verification-v4-primary",
+  "result": "pass",
+  "kind": "durable_model_free_data_integrity_plus_installed_integration_not_semantic_acceptance",
+  "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+  "runtime": "main .venv; selected-data oracle stdlib only; integration normal installed distribution import; no source-path injection",
+  "tests_passed": 22,
+  "relocated_selected_data_tests_passed": 13,
+  "relocated_installed_integration_tests_passed": 2,
+  "additional_commands": [
+    {
+      "command": "uv run --locked --offline --no-sync ruff check tests/test_study_data.py",
+      "result": "All checks passed"
+    },
+    {
+      "command": "uv run --locked --offline --no-sync ruff format --check tests/test_study_data.py",
+      "result": "1 file already formatted"
+    },
+    {
+      "command": "uv run --locked --offline --no-sync pytest -q",
+      "result": "265 passed, 22 subtests passed"
+    }
+  ],
+  "input_bindings": {
+    "tests/test_study_data.py": "9e598056218f75d6ac74395ce1b1caa275e88facdf88255c4564b2f79a9722be",
+    "configs/study-policy.json": "b6ebb98ccba4db741e54c203df296205cb406bd9163846b7c4e577f0a7ddc8b4",
+    "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+  },
+  "manifest_binding": "Selection manifest binds this receipt and every retained export file; this receipt does not hash itself or the manifest. Revalidate inventory after receipt replacement.",
+  "checks": [
+    "strict UTF-8 JSON, nested duplicate keys, finite numbers and per-file unique IDs",
+    "exact six-field request boundary, released text/time strings and retained original source-line hashes",
+    "pinned retained context/entity/status bytes and exact retained snapshot source bytes/membership",
+    "development eligibility, no quarantine, turn_index0, complete original variant/source links",
+    "original noisy span/type/ID slices, historical model_reviewed and pending human status",
+    "independent dictionary bundle oracle: FK, owner/null identities, all-exported latest versions, both message clocks and earlier cutoff",
+    "scenario/category/variant roster bindings, formula order, six-order coverage and exclusion accounting",
+    "proposed requirement hashes, eligible support membership and normalized temporal source facts; no semantic adequacy judgment",
+    "rejected/superseded v1 annotations preserved as provenance, not active acceptance",
+    "retained timezone identity file/hash/tzdb/IANA key agreement and complete temporal normalization receipts",
+    "unchanged opening hash, 416 prior reservations, recomputed charges, retained caps and prompt versions",
+    "all retained export files manifest-bound, including historical integration and primary source-audit artifacts",
+    "relocated DATA checks with archive/source package/Git/models absent; copied-byte mutation detection",
+    "fictional duplicate/FK/null/owner/stale/future/message-time/timezone-identity fault checks",
+    "installed package public bundles independently compared for all123 requests, with exact public-file read guard",
+    "installed trusted TimezoneBinding name/path/hash API and obsolete-keyword rejection",
+    "all123 versioned requirement lines and seven-dimension source-only comparisons bound to exact public request/snapshot, original independent table row, full source packet, actual native receipt and original input access evidence",
+    "exact original v2 bytes preserved and v1 rejection receipts valid under original insertion-order serialization",
+    "primary decision/reason section bytes and integration-time full decision-document bytes retained, not dependent on future mutable log",
+    "all123 active v4 comparison rows retain immutable v3 history and exact source/auditor bindings; no active pending content decisions",
+    "exact nine generic-topic variants change only required/forbidden meaning to genuine request-consistent topical questions; draft action, recipients, supports, all other semantics, source bytes, roster membership/order unchanged",
+    "current v3 requirement and roster bytes preserved byte-for-byte with original pending statuses; v3 ledger and authority unchanged",
+    "exact additional primary decision/reason bytes retained in v3-to-v4 authority rather than depending on a future mutable decision-log hash",
+    "dynamic host temp root replaces user-specific permanent path; relocated copy uses installed editable distribution, not a fresh relocated wheel install"
+  ],
+  "counts": {
+    "requests": 123,
+    "scenarios": 41,
+    "families": 5,
+    "planned_qwen_rows": 369,
+    "contacts": 28,
+    "calendar": 50,
+    "history": 67,
+    "snapshots": 10,
+    "entity_annotations": 343,
+    "excluded_scenarios": 283
+  },
+  "annotation_integration": {
+    "active_requirement_version": "stage1-source-authored-v4",
+    "compared_variants": 123,
+    "content_changed_variants": 9,
+    "primary_content_decision_pending_scenarios": [],
+    "human_review_status": "pending_not_human_annotation",
+    "final_stage1_code_protocol_acceptance": "primary_accepted_after_independent_software_and_fresh_data_protocol_reviews",
+    "execution_freeze": false
+  },
+  "not_checked": [
+    "generic policy extensions not independently enumerated by source annotator; no global semantic endorsement",
+    "fresh independent semantic audit of original entity labels; exact original byte/span/ID integrity is checked",
+    "full-release source comparison or omitted-original-version discovery without original release; original migration comparison remains historical below",
+    "fresh relocated wheel installation (relocated data tests use available installed distribution)",
+    "future prompt rendering, Stage5 model/prompt/time feasibility, model behavior, study scores or outcome reviews"
+  ],
+  "model_execution": false,
+  "historical_receipts": [
+    {
+      "original_serialized_sha256": "46af0f21b5618c3372912b9e7966f594c84b46f1a60d55e5c01e4680fd0a6074",
+      "preservation": "Original pre-acceptance receipt retained structurally, recoverable with json.dumps(ensure_ascii=False, indent=2) plus newline. Its then-pending review status is historical.",
+      "receipt": {
+        "schema_version": "nlp3-data-verification-v4",
+        "result": "pass",
+        "kind": "durable_model_free_data_integrity_plus_installed_integration_not_semantic_acceptance",
+        "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+        "runtime": "main .venv; selected-data oracle stdlib only; integration normal installed distribution import; no source-path injection",
+        "tests_passed": 22,
+        "relocated_selected_data_tests_passed": 13,
+        "relocated_installed_integration_tests_passed": 2,
+        "additional_commands": [
+          {
+            "command": "uv run --locked --offline --no-sync ruff check tests/test_study_data.py",
+            "result": "All checks passed"
+          },
+          {
+            "command": "uv run --locked --offline --no-sync ruff format --check tests/test_study_data.py",
+            "result": "1 file already formatted"
+          },
+          {
+            "command": "uv run --locked --offline --no-sync pytest -q",
+            "result": "265 passed, 22 subtests passed"
+          }
+        ],
+        "input_bindings": {
+          "tests/test_study_data.py": "6c599530ce75a3772d560738565a9949efba91d1a6b20bf5dfa00f517e90d6eb",
+          "configs/study-policy.json": "ca93783c1fca06b5a163c2c09785ea91147d32d059cc20512ec5fdd4e25e6190",
+          "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+        },
+        "manifest_binding": "Selection manifest binds this receipt and every retained export file; this receipt does not hash itself or the manifest. Revalidate inventory after receipt replacement.",
+        "checks": [
+          "strict UTF-8 JSON, nested duplicate keys, finite numbers and per-file unique IDs",
+          "exact six-field request boundary, released text/time strings and retained original source-line hashes",
+          "pinned retained context/entity/status bytes and exact retained snapshot source bytes/membership",
+          "development eligibility, no quarantine, turn_index0, complete original variant/source links",
+          "original noisy span/type/ID slices, historical model_reviewed and pending human status",
+          "independent dictionary bundle oracle: FK, owner/null identities, all-exported latest versions, both message clocks and earlier cutoff",
+          "scenario/category/variant roster bindings, formula order, six-order coverage and exclusion accounting",
+          "proposed requirement hashes, eligible support membership and normalized temporal source facts; no semantic adequacy judgment",
+          "rejected/superseded v1 annotations preserved as provenance, not active acceptance",
+          "retained timezone identity file/hash/tzdb/IANA key agreement and complete temporal normalization receipts",
+          "unchanged opening hash, 416 prior reservations, recomputed charges, retained caps and prompt versions",
+          "all retained export files manifest-bound, including historical integration and primary source-audit artifacts",
+          "relocated DATA checks with archive/source package/Git/models absent; copied-byte mutation detection",
+          "fictional duplicate/FK/null/owner/stale/future/message-time/timezone-identity fault checks",
+          "installed package public bundles independently compared for all123 requests, with exact public-file read guard",
+          "installed trusted TimezoneBinding name/path/hash API and obsolete-keyword rejection",
+          "all123 versioned requirement lines and seven-dimension source-only comparisons bound to exact public request/snapshot, original independent table row, full source packet, actual native receipt and original input access evidence",
+          "exact original v2 bytes preserved and v1 rejection receipts valid under original insertion-order serialization",
+          "primary decision/reason section bytes and integration-time full decision-document bytes retained, not dependent on future mutable log",
+          "all123 active v4 comparison rows retain immutable v3 history and exact source/auditor bindings; no active pending content decisions",
+          "exact nine generic-topic variants change only required/forbidden meaning to genuine request-consistent topical questions; draft action, recipients, supports, all other semantics, source bytes, roster membership/order unchanged",
+          "current v3 requirement and roster bytes preserved byte-for-byte with original pending statuses; v3 ledger and authority unchanged",
+          "exact additional primary decision/reason bytes retained in v3-to-v4 authority rather than depending on a future mutable decision-log hash",
+          "dynamic host temp root replaces user-specific permanent path; relocated copy uses installed editable distribution, not a fresh relocated wheel install"
+        ],
+        "counts": {
+          "requests": 123,
+          "scenarios": 41,
+          "families": 5,
+          "planned_qwen_rows": 369,
+          "contacts": 28,
+          "calendar": 50,
+          "history": 67,
+          "snapshots": 10,
+          "entity_annotations": 343,
+          "excluded_scenarios": 283
+        },
+        "annotation_integration": {
+          "active_requirement_version": "stage1-source-authored-v4",
+          "compared_variants": 123,
+          "content_changed_variants": 9,
+          "primary_content_decision_pending_scenarios": [],
+          "human_review_status": "pending_not_human_annotation",
+          "final_stage1_code_protocol_acceptance": "pending_separate_fresh_stable_DATA_PROTOCOL_Pro_review_and_primary_acceptance",
+          "execution_freeze": false
+        },
+        "not_checked": [
+          "fresh stable DATA/PROTOCOL Pro review and final primary acceptance; reported completed software follow-up is a separate gate",
+          "generic policy extensions not independently enumerated by source annotator; no global semantic endorsement",
+          "fresh independent semantic audit of original entity labels; exact original byte/span/ID integrity is checked",
+          "full-release source comparison or omitted-original-version discovery without original release; original migration comparison remains historical below",
+          "fresh relocated wheel installation (relocated data tests use available installed distribution)",
+          "future prompt rendering, Stage5 model/prompt/time feasibility, model behavior, study scores or outcome reviews"
+        ],
+        "model_execution": false,
+        "historical_receipts": [
+          {
+            "original_serialized_sha256": "d56dc759ec4ed1aaebfa83c74a51cc1eadda79583c6d89ad705931cb033e125d",
+            "preservation": "Previous current v3 DATA receipt retained structurally and recoverable with UTF-8 json.dumps(ensure_ascii=False, indent=2) plus newline. Its content-decision pending statuses and earlier nested receipts are genuinely historical, not rewritten.",
+            "receipt": {
+              "schema_version": "nlp3-data-verification-v3",
+              "result": "pass",
+              "kind": "durable_model_free_data_integrity_plus_installed_integration_not_semantic_acceptance",
+              "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+              "runtime": "main .venv; selected-data oracle stdlib only; integration normal installed distribution import; no source-path injection",
+              "tests_passed": 21,
+              "relocated_selected_data_tests_passed": 12,
+              "relocated_installed_integration_tests_passed": 2,
+              "additional_commands": [
+                {
+                  "command": "uv run --locked --offline --no-sync ruff check tests/test_study_data.py",
+                  "result": "All checks passed"
+                },
+                {
+                  "command": "uv run --locked --offline --no-sync ruff format --check tests/test_study_data.py",
+                  "result": "1 file already formatted"
+                },
+                {
+                  "command": "uv run --locked --offline --no-sync pytest -q",
+                  "result": "264 passed, 22 subtests passed"
+                }
+              ],
+              "input_bindings": {
+                "tests/test_study_data.py": "cba792e5e036a43e736f16d2b702c55a6d2136344faa5dc8b970708187c4dfe5",
+                "configs/study-policy.json": "94cbc8f735554f5877454e18856a800ef7e55f0523cb8092c0907affb769a24e",
+                "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+              },
+              "manifest_binding": "Selection manifest binds this receipt and every retained export file; this receipt does not hash itself or the manifest. Revalidate inventory after receipt replacement.",
+              "checks": [
+                "strict UTF-8 JSON, nested duplicate keys, finite numbers and per-file unique IDs",
+                "exact six-field request boundary, released text/time strings and retained original source-line hashes",
+                "pinned retained context/entity/status bytes and exact retained snapshot source bytes/membership",
+                "development eligibility, no quarantine, turn_index0, complete original variant/source links",
+                "original noisy span/type/ID slices, historical model_reviewed and pending human status",
+                "independent dictionary bundle oracle: FK, owner/null identities, all-exported latest versions, both message clocks and earlier cutoff",
+                "scenario/category/variant roster bindings, formula order, six-order coverage and exclusion accounting",
+                "proposed requirement hashes, eligible support membership and normalized temporal source facts; no semantic adequacy judgment",
+                "rejected/superseded v1 annotations preserved as provenance, not active acceptance",
+                "retained timezone identity file/hash/tzdb/IANA key agreement and complete temporal normalization receipts",
+                "unchanged opening hash, 416 prior reservations, recomputed charges, retained caps and prompt versions",
+                "all retained export files manifest-bound, including historical integration and primary source-audit artifacts",
+                "relocated DATA checks with archive/source package/Git/models absent; copied-byte mutation detection",
+                "fictional duplicate/FK/null/owner/stale/future/message-time/timezone-identity fault checks",
+                "installed package public bundles independently compared for all123 requests, with exact public-file read guard",
+                "installed trusted TimezoneBinding name/path/hash API and obsolete-keyword rejection",
+                "all123 v2/v3 lines and seven-dimension source-only comparisons bound to exact public request/snapshot, original independent table row, full source packet, actual native receipt and original input access evidence",
+                "exact original v2 bytes preserved and v1 rejection receipts valid under original insertion-order serialization",
+                "primary decision/reason section bytes and integration-time full decision-document bytes retained, not dependent on future mutable log"
+              ],
+              "counts": {
+                "requests": 123,
+                "scenarios": 41,
+                "families": 5,
+                "planned_qwen_rows": 369,
+                "contacts": 28,
+                "calendar": 50,
+                "history": 67,
+                "snapshots": 10,
+                "entity_annotations": 343,
+                "excluded_scenarios": 283
+              },
+              "annotation_integration": {
+                "compared_variants": 123,
+                "primary_content_decision_pending_scenarios": [
+                  "s0109",
+                  "s0124",
+                  "s0209"
+                ],
+                "human_review_status": "pending_not_human_annotation",
+                "final_stage1_code_protocol_acceptance": "pending_separate_stable_Pro_review",
+                "execution_freeze": false
+              },
+              "not_checked": [
+                "additional primary content-breadth adjudication for s0109/s0124/s0209; v2 wording deliberately retained pending direction",
+                "final Stage1/data/protocol acceptance and separate stable independent Pro review",
+                "generic policy extensions not independently enumerated by source annotator; no global semantic endorsement",
+                "fresh independent semantic audit of original entity labels; exact original byte/span/ID integrity is checked",
+                "full-release source comparison or omitted-original-version discovery without original release; original migration comparison remains historical below",
+                "fresh relocated wheel installation (relocated data tests use available installed distribution)",
+                "future prompt rendering, Stage5 model/prompt/time feasibility, model behavior, study scores or outcome reviews"
+              ],
+              "model_execution": false,
+              "historical_receipts": [
+                {
+                  "original_serialized_sha256": "89b1310f49cc7a8d3b7f93502fd633c28b97444cd79cc9ca276b72c34b02d4e3",
+                  "preservation": "Prior resumed stdlib-only DATA receipt retained structurally, including its original v1 migration receipt. These historical commands were not rerun; current checks are stated above.",
+                  "receipt": {
+                    "schema_version": "nlp3-data-verification-v2",
+                    "result": "pass",
+                    "kind": "durable_model_free_retained_data_integrity_not_semantic_acceptance_or_installed_application_check",
+                    "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+                    "runtime": "main .venv interpreter; stdlib only; no application imports or src injection",
+                    "tests_passed": 18,
+                    "relocated_selected_data_tests_passed": 11,
+                    "additional_command": "uv run --locked --offline --no-sync ruff check tests/test_study_data.py",
+                    "additional_result": "All checks passed",
+                    "input_bindings": {
+                      "tests/test_study_data.py": "c2c2576a607a42db0fec6277aa40b3ad221a45b3963eb1c89d6d37884f1f5789",
+                      "configs/study-policy.json": "9099b9d5f00567475bbdbeacc9c5f71ee3e52ecabfe4bf8841ceb933fbacf75b",
+                      "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+                    },
+                    "manifest_binding": "Selection manifest binds this receipt; receipt deliberately does not hash the manifest or itself. Test command revalidates all retained-file bytes.",
+                    "checks": [
+                      "strict UTF-8 JSON, nested duplicate keys, finite numbers and per-file unique IDs",
+                      "exact six-field request boundary, released text/time strings and retained original source-line hashes",
+                      "pinned retained context/entity/status bytes and exact retained snapshot source bytes/membership",
+                      "development eligibility, no quarantine, turn_index0, complete original variant/source links",
+                      "original noisy span/type/ID slices, historical model_reviewed and pending human status",
+                      "independent dictionary bundle oracle: FK, owner/null identities, all-exported latest versions, both message clocks and earlier cutoff",
+                      "scenario/category/variant roster bindings, formula order, six-order coverage and exclusion accounting",
+                      "proposed requirement hashes, eligible support membership and normalized temporal source facts; no semantic adequacy judgment",
+                      "rejected/superseded v1 annotations preserved as provenance, not active acceptance",
+                      "retained timezone identity file/hash/tzdb/IANA key agreement and complete temporal normalization receipts",
+                      "unchanged opening hash, 416 prior reservations, recomputed charges, retained caps and prompt versions",
+                      "all retained export files manifest-bound, including historical integration and primary source-audit artifacts",
+                      "relocated DATA checks with archive/source package/Git/models absent; copied-byte mutation detection",
+                      "fictional duplicate/FK/null/owner/stale/future/message-time/timezone-identity fault checks"
+                    ],
+                    "counts": {
+                      "requests": 123,
+                      "scenarios": 41,
+                      "families": 5,
+                      "planned_qwen_rows": 369,
+                      "contacts": 28,
+                      "calendar": 50,
+                      "history": 67,
+                      "snapshots": 10,
+                      "entity_annotations": 343,
+                      "excluded_scenarios": 283
+                    },
+                    "not_checked": [
+                      "independent source-only annotation acceptance/adjudication; audit artifacts are inventoried without treating them as accepted labels",
+                      "full original-release source byte comparison and omitted-original-version discovery cannot be rerun without original release; earlier comparison below remains historical",
+                      "installed package/public-loader/CLI integration and evaluator-read isolation owned by coding lead/primary; integration-validation.json unchanged historical direct-source evidence",
+                      "semantic adequacy of required meaning, support sufficiency, book owner/holder associations, clarification or unsupported reasons",
+                      "fresh independent Pro code/protocol acceptance",
+                      "Stage3 opaque ID prompt rendering",
+                      "Stage5 model/prompt/time feasibility",
+                      "model outputs or quality",
+                      "outcome semantic reviews"
+                    ],
+                    "model_execution": false,
+                    "historical_receipts": [
+                      {
+                        "preservation": "Original v1 receipt retained structurally below; not rerun. Original serialized SHA-256 0e825c67e13b86b3d047023b2080b366ef68911b0843e3d29960181df9ab4b30; original bytes also retained in the primary's verified pause archive.",
+                        "receipt": {
+                          "schema_version": "nlp3-data-verification-v1",
+                          "result": "pass",
+                          "kind": "model_free_source_export_integrity_not_independent_semantic_acceptance",
+                          "command": "UV_CACHE_DIR=/tmp/nlp3-stage1-eval-uv-cache uv run --locked --offline --no-sync python /tmp/nlp3-stage1-eval-verify-v1.py",
+                          "runtime": "managed main .venv; Python 3.11",
+                          "checks": [
+                            "strict_json_unique_requests_and_exact_public_projection",
+                            "all_original_request_text_timestamps_ids_and_serialized_source_line_bytes_preserved",
+                            "all_public_context_and_snapshot_serialized_lines_exact_source_bytes",
+                            "unique_record_ids_complete_snapshot_membership_and_owner_foreign_keys",
+                            "global_available_contact_event_version_closure_through_max_selected_cutoff",
+                            "every_selected_snapshot_member_and_requirement_support_is_current_time_eligible",
+                            "complete_clean_typo_asr_pairing_and_original_source_message_episode_links",
+                            "all_source_scenarios_accounted_for_without_dependent_quarantined_or_outside_dev_inclusions",
+                            "entity_spans_and_annotation_status_preserved_exactly_human_pending",
+                            "scenario_variant_condition_order_formula_and_each_noise_slice_six_order_coverage",
+                            "policy_authoritative_budget_opening_hash_binding",
+                            "pinned_tzif_corrected_independent_clock_examples_and_rejected_annotation_provenance",
+                            "public_files_allowlist_gold_and_task_requirements_physically_separate"
+                          ],
+                          "counts": {
+                            "requests": 123,
+                            "scenarios": 41,
+                            "families": 5,
+                            "planned_qwen_rows": 369,
+                            "contacts": 28,
+                            "calendar": 50,
+                            "history": 67,
+                            "snapshots": 10,
+                            "entity_annotations": 343,
+                            "excluded_scenarios": 283
+                          },
+                          "not_checked": [
+                            "independent source-only annotation acceptance/adjudication pending",
+                            "loader application integration owned by coding lead",
+                            "Stage3 opaque ID prompt rendering",
+                            "Stage5 model/prompt/time feasibility",
+                            "model outputs or quality",
+                            "outcome semantic reviews"
+                          ],
+                          "model_execution": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "primary_stage1_acceptance": {
+    "status": "accepted_software_data_protocol_not_model_quality",
+    "reviews": [
+      "software-review-1",
+      "software-review-followup",
+      "data-protocol-review"
+    ],
+    "review_receipts": {
+      "software-review-1": "d5ae6141544ddcf9edec744f758207a6f5c561ae3d2b98b5ae242b3e7ecfdf0f",
+      "software-review-followup": "4e0a4eab8e5b316c7c570068d05794c5d76f18cfe21139c3cf2963bd4947af4f",
+      "data-protocol-review": "65ad2bf54a8aa87727f68eff03ec1adde8887fe8478cfe1bdb4163ad6a3c3799"
+    },
+    "primary_gate": "runs/stage1-resume-20261027/primary-full-gate-v4.log",
+    "metadata_closure": "Final changes only status assertions and documented pre-existing non-draft/human-review conventions; source requests/context/gold/requirements/order unchanged; final metadata gate follows.",
+    "human_review_completed": false,
+    "execution_frozen": false
+  }
+}

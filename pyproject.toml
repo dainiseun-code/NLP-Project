@@ -1,0 +1,33 @@
+[project]
+name = "messaging-nlp"
+version = "0.1.0"
+description = "Local, draft-only messaging NLP comparison"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy>=2.0",
+    "pydantic>=2.10",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "pytest-cov>=6", "ruff>=0.9"]
+
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+messaging-nlp = "messaging_nlp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

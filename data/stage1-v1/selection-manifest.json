@@ -1,0 +1,401 @@
+{
+  "schema_version": "nlp3-selection-v1",
+  "selection_id": "stage1-v1",
+  "status": "stage1_accepted_not_run_frozen",
+  "data_kind": "synthetic_model_reviewed_development",
+  "human_review_status": "source_full_human_review_pending; new_requirements_not_human_annotated",
+  "public_root": "data/stage1-v1/public",
+  "evaluator_root": "data/stage1-v1/evaluator",
+  "source_release_provenance": "Old-version/data/releases/stage2-v2",
+  "source_runtime_dependency": false,
+  "source_files": {
+    "processed/messages.jsonl": {
+      "sha256": "61c23536c10188ba07fb2cd7269edc58ad3343d00ea9a09512da01e20df55896",
+      "bytes": 790623
+    },
+    "processed/scenarios.jsonl": {
+      "sha256": "68e22ecb62464b7fc276e5a3f0be465afb0ad9df1c86b09b3775ae0830059606",
+      "bytes": 42666
+    },
+    "processed/families.jsonl": {
+      "sha256": "49d39ff05ca4cdb04d837680a04b27769b04acbe8ce85f80500a422ec9d49a73",
+      "bytes": 1611
+    },
+    "processed/family-members.jsonl": {
+      "sha256": "e1b436ec0822d8825b4200701eb0bd481ab26a04cdba1aa2c60b4d41a26ee629",
+      "bytes": 283
+    },
+    "context/contacts.jsonl": {
+      "sha256": "f7e10bd8c6efedac6b1cd5ee87351039a9166c29a3151adf1ad2baf92d7569f3",
+      "bytes": 7400
+    },
+    "context/calendar.jsonl": {
+      "sha256": "43af8037610c657c7fb2ce7a79e913e7ab33ae6e77fe7946c898ab4e65b7f41a",
+      "bytes": 20016
+    },
+    "context/history.jsonl": {
+      "sha256": "4d024544456811d61bc689fc883773356bc673deb340c48c70a6fef6ba36d8e8",
+      "bytes": 39451
+    },
+    "context/snapshots.jsonl": {
+      "sha256": "1068d3468ab4905b8f2f952628bbaf5e1e6e598fa4065e1477c7cd2b4aaa8b1f",
+      "bytes": 8768
+    },
+    "review/eligibility.jsonl": {
+      "sha256": "fb0ea175a51614f402b6787c8877e21e0747e80b4fbbf5c257f651d6cc11cb30",
+      "bytes": 652991
+    },
+    "review/provenance.jsonl": {
+      "sha256": "f79cc949e6764642a60c8c33ec46fe7ddb17c11313af85ecf32d856f36f48e5c",
+      "bytes": 718947
+    },
+    "gold/episodes.jsonl": {
+      "sha256": "9ea1f36a5596912a96b14a72f62477a00e5c50814104f3e40d5f7803893209eb",
+      "bytes": 234102
+    },
+    "gold/entities.jsonl": {
+      "sha256": "14f5c63c5d04fdde03e54ed5a46257214041481e08b1f4bd031ee1bbced8c25a",
+      "bytes": 286849
+    },
+    "gold/annotation_status.jsonl": {
+      "sha256": "cfa218121a15ee938a221265a21af4541141bb10866b51c0049280121ca2f85e",
+      "bytes": 437436
+    }
+  },
+  "counts": {
+    "selected_scenarios": 41,
+    "selected_requests": 123,
+    "conditions_per_request": 3,
+    "planned_qwen_rows": 369,
+    "excluded_scenarios": 283
+  },
+  "selection_rules": [
+    "development split only",
+    "all variants development_eval_eligible",
+    "no quarantined variant",
+    "turn_index=0; exclude dependent followups",
+    "retain every clean/typo/asr variant including information loss",
+    "no model outcomes used; no generated or rewritten requests"
+  ],
+  "owner_binding": {
+    "owner_id": "owner_001",
+    "basis": "explicit selected source history endpoints and calendar participants",
+    "null_endpoints": "unknown_never_self"
+  },
+  "projection": {
+    "requests": "exact text + original timestamp/timezone strings; renamed time fields; explicit owner binding; other metadata evaluator only",
+    "context_rows": "exact raw source JSONL lines",
+    "snapshots": "exact raw source snapshot JSONL lines; complete membership preserved"
+  },
+  "optional_gold_diagnostic": "deferred_no_extra_arm",
+  "files": {
+    "evaluator/exclusions.jsonl": {
+      "sha256": "8275d096126a67a0c446f882f04722f07690a558df9fe7b9bb9d6d2da98cb596",
+      "bytes": 73716,
+      "rows": 283
+    },
+    "evaluator/gold/annotation_status.jsonl": {
+      "sha256": "9fcbfaf3a5f8283ab5638e7313f2a464ac7da25546c8918995357acf25e5e7e8",
+      "bytes": 56094,
+      "rows": 246
+    },
+    "evaluator/gold/entities.jsonl": {
+      "sha256": "c8dfc16a30df10828b0f944ca5ec2b0f73c72943ad633ed60d63e1914f42e09e",
+      "bytes": 43590,
+      "rows": 343
+    },
+    "evaluator/integration-validation.json": {
+      "sha256": "fde9c1d3c9e415ec37b821a526a5661264920646d48da1711367fbc4124e953c",
+      "bytes": 12870,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/assignment.txt": {
+      "sha256": "db26ff03ce072b9829bccd321c4a3fbd0f17181806afc231e8dce09dbd7bd80e",
+      "bytes": 3567,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/input-access.json": {
+      "sha256": "3a75dfe6d425cf8dca7b9284be5cd0f26b0e3f225cfe3969460b54b7e3cb8cc9",
+      "bytes": 2716,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/inputs.json": {
+      "sha256": "6613ef19d179f67801ece91a3409d0912fdd96587a94024f02085c5ecac13e5b",
+      "bytes": 1927,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/original-annotations.md": {
+      "sha256": "77be60d9a06c6261577c6f21cd7f042ab74b0097fbb756e44be87140c45df6a4",
+      "bytes": 31589,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/receipt.json": {
+      "sha256": "612a401292c19039521b97ecf034f95587b5fa1a2a935d649ce7c93133194d14",
+      "bytes": 1087,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/source-only-policy.json": {
+      "sha256": "1fa8f99ef1479c1be3bdae22b77b23d5d51ded6977ef3050e23027fae5f6fcbd",
+      "bytes": 2428,
+      "rows": null
+    },
+    "evaluator/provenance/annotation-audit/variant-links.jsonl": {
+      "sha256": "cafb1ed34002c2caa7071284e8213b29873200f1ae747573b72f2ec4b4516164",
+      "bytes": 10062,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/rejections-v1-to-v2.jsonl": {
+      "sha256": "01e623f82d16f384b72fe483f389153752d4d6a4d7524ef533677d05ea6d2ecd",
+      "bytes": 50097,
+      "rows": 21
+    },
+    "evaluator/provenance/requirements/source-only-comparison-v3.jsonl": {
+      "sha256": "a172358ccaffadbeaa28c518f4f56d02602f462c309a6848543f986b57f58755",
+      "bytes": 741327,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/source-only-comparison-v4.jsonl": {
+      "sha256": "850d730ecfa134f31f9a2dbed757ccd57c867ecd6bd8fcf831aa4a698e5fbe74",
+      "bytes": 883749,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v1-proposed.jsonl": {
+      "sha256": "18842a416e4afc9c60c21ea1ccf1590dc8b28bfc1e5277d0d25f7309460a635a",
+      "bytes": 217848,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v2-proposed.jsonl": {
+      "sha256": "3488091008ce9ea7621981d5061a377e810ae6626a0f0d0d29cc41759b448b2c",
+      "bytes": 218043,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v2-to-v3-adjudication.json": {
+      "sha256": "2e5e6def2b493e16955a807f0fd7190342b837778be865c374de517919919eb6",
+      "bytes": 17862,
+      "rows": null
+    },
+    "evaluator/provenance/requirements/v2-to-v3-changes.jsonl": {
+      "sha256": "a15afa5fd4b751b17da6557cf838314cd33d860e98332b22b13400663d56480d",
+      "bytes": 100445,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v3-proposed.jsonl": {
+      "sha256": "6b8568494676f54f78e4c2d6124a95680a42e935ef0c4d628febdfd23fa6a64c",
+      "bytes": 227151,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v3-roster.jsonl": {
+      "sha256": "5fcbd6a35a52e7fea1d6b053db57feb4e4c8a80c1c35b49e64ab352bdb981e67",
+      "bytes": 100178,
+      "rows": 123
+    },
+    "evaluator/provenance/requirements/v3-to-v4-adjudication.json": {
+      "sha256": "9736b03e30b75383fc017b66ff1c299e17610d454820615294b292c5c1716cbd",
+      "bytes": 2705,
+      "rows": null
+    },
+    "evaluator/provenance/requirements/v3-to-v4-changes.jsonl": {
+      "sha256": "583db4fae1984edeb3b39475cbee96464c943293e20c55510d600e003429890d",
+      "bytes": 22959,
+      "rows": 9
+    },
+    "evaluator/provenance/snapshot-projections.jsonl": {
+      "sha256": "719ff1899260f57c4909f5295f3a993af5620970e7f16d3f37322cf72dd8fbff",
+      "bytes": 2833,
+      "rows": 10
+    },
+    "evaluator/provenance/source/context/snapshots.jsonl": {
+      "sha256": "38016c6c539812bb497f6e9bf66bd6600de3e83d2d54fc7c7521704d03df7a83",
+      "bytes": 4914,
+      "rows": 10
+    },
+    "evaluator/provenance/source/processed/families.jsonl": {
+      "sha256": "436a4f43f191b49a9d5e4f92e9072ae266343f7f90dbdb7d2b69a58812528c51",
+      "bytes": 323,
+      "rows": 5
+    },
+    "evaluator/provenance/source/processed/family-members.jsonl": {
+      "sha256": "19eaa7431bf3ccd6a0b1fb7335b2b44e3b2bd69275b722706f420ab2de331e38",
+      "bytes": 104,
+      "rows": 1
+    },
+    "evaluator/provenance/source/processed/messages.jsonl": {
+      "sha256": "9517b7ae62b2eadcfe74851322c142078a10140fb33f492ffdae495a177cc28f",
+      "bytes": 113698,
+      "rows": 123
+    },
+    "evaluator/provenance/source/processed/scenarios.jsonl": {
+      "sha256": "753cd196d11ba30a661b955db027a36ed1b883cb59345ec7d31959f92029748b",
+      "bytes": 5966,
+      "rows": 41
+    },
+    "evaluator/provenance/source/review/eligibility.jsonl": {
+      "sha256": "0f153c69bf9c0ede3013dd43bcfc0fe2509a48febcfb3cb54b5182c4f26a845a",
+      "bytes": 79377,
+      "rows": 123
+    },
+    "evaluator/provenance/source/review/provenance.jsonl": {
+      "sha256": "8b2a9d8d00d0854f587b76b93a086dc357b9889d4a3eb88c9282657ea1a87226",
+      "bytes": 91941,
+      "rows": 123
+    },
+    "evaluator/provenance/temporal-normalizations.jsonl": {
+      "sha256": "a65e40939f3b65a48a22f4c936fa53bc089fa97f45b9b2388072519316bc589e",
+      "bytes": 134572,
+      "rows": 367
+    },
+    "evaluator/roster.jsonl": {
+      "sha256": "9e76f676c5f20ca9ef134cda40f803a568c582bbd4426395c0ea06e4653472ec",
+      "bytes": 100088,
+      "rows": 123
+    },
+    "evaluator/task-requirements.jsonl": {
+      "sha256": "b7c66711971e18bbc871b6248d2fbc08e8b51b2536e5755c5dba64ff38638485",
+      "bytes": 229605,
+      "rows": 123
+    },
+    "evaluator/timezone-diagnostic.json": {
+      "sha256": "5da8e1fac08af13f9b5f9893cd13a4fa2afb46ccb02a2addf664688a53120dc0",
+      "bytes": 1189,
+      "rows": null
+    },
+    "evaluator/verification.json": {
+      "sha256": "98d9dc5b42afb2caa94738ed7d14708fe5b70ca3991adf25eb25659f07624bb9",
+      "bytes": 28957,
+      "rows": null
+    },
+    "provenance/timezones/America_Vancouver.tzif": {
+      "sha256": "e182e20ec67c46a7dd0aedb3d45fb1395edcb14ff2af2ac694a5776b307bed31",
+      "bytes": 2590,
+      "rows": null
+    },
+    "provenance/timezones/identity.json": {
+      "sha256": "c11b0381d5c5d4ec409ec7fa98fd60171d12e59267ebc5e764785e9a4027b056",
+      "bytes": 930,
+      "rows": null
+    },
+    "public/calendar.jsonl": {
+      "sha256": "69b99261e1344c2e6b88989d8b6b79f3d79f7b16b9a7456d96452402fcbac369",
+      "bytes": 13344,
+      "rows": 50
+    },
+    "public/contacts.jsonl": {
+      "sha256": "06d3820eab1cd1d16ceeb936641b446e19939d372e5ccaee954818d86b2dfc2a",
+      "bytes": 6070,
+      "rows": 28
+    },
+    "public/history.jsonl": {
+      "sha256": "eaee503ed48b77cfa8edda3b37889dd569390a462c756ba72905b8d08bf9237b",
+      "bytes": 21928,
+      "rows": 67
+    },
+    "public/requests.jsonl": {
+      "sha256": "d20f5b0de8a86d24685423a87acfa8ef2008de975b3b22e5fecc0c303c90ac9a",
+      "bytes": 33373,
+      "rows": 123
+    },
+    "public/snapshots.jsonl": {
+      "sha256": "38016c6c539812bb497f6e9bf66bd6600de3e83d2d54fc7c7521704d03df7a83",
+      "bytes": 4914,
+      "rows": 10
+    }
+  },
+  "context_selection_rule": "all records named by any selected request snapshot, regardless family/split/recipient/relevance; then loader applies per-request snapshot, availability, message time and latest version; no evaluator labels used",
+  "heldout_boundary": "no heldout task text/outcomes used in selection; shared read-only context records preserved as snapshot distractors/support after candidate IDs selected",
+  "requirement_status": "source_only_model_annotation_primary_adjudicated_human_pending_final_data_protocol_acceptance_pending",
+  "category_scenarios": {
+    "alias": [
+      "s0109",
+      "s0121",
+      "s0209"
+    ],
+    "ambiguous": [
+      "s0115"
+    ],
+    "ambiguous_match": [
+      "bb_f_development_ambiguous_match"
+    ],
+    "attendance": [
+      "s0105",
+      "s0117",
+      "s0205",
+      "s0258"
+    ],
+    "authority": [
+      "s0124"
+    ],
+    "book_borrowing": [
+      "bb_f_development_ambiguous_match",
+      "bb_f_development_future_only",
+      "bb_f_development_in_person",
+      "bb_f_development_missing_title",
+      "bb_f_development_named_owner",
+      "bb_f_development_two_message_chain",
+      "bb_f_development_unknown_owner",
+      "bb_f_development_wrong_owner"
+    ],
+    "episode_start": [
+      "s0201",
+      "s0254"
+    ],
+    "explicit_date": [
+      "s0116"
+    ],
+    "future_only": [
+      "bb_f_development_future_only"
+    ],
+    "future_reply": [
+      "s0111",
+      "s0123",
+      "s0211"
+    ],
+    "in_person": [
+      "bb_f_development_in_person"
+    ],
+    "missing_record": [
+      "s0110",
+      "s0122",
+      "s0210"
+    ],
+    "missing_title": [
+      "bb_f_development_missing_title"
+    ],
+    "named_owner": [
+      "bb_f_development_named_owner"
+    ],
+    "negation": [
+      "s0106",
+      "s0259"
+    ],
+    "repeat_name": [
+      "s0113",
+      "s0213",
+      "s0297"
+    ],
+    "time_lookup": [
+      "s0108",
+      "s0120",
+      "s0208"
+    ],
+    "topic": [
+      "s0107",
+      "s0119",
+      "s0207",
+      "s0260"
+    ],
+    "two_message_chain": [
+      "bb_f_development_two_message_chain"
+    ],
+    "unknown_owner": [
+      "bb_f_development_unknown_owner"
+    ],
+    "unsupported": [
+      "s0114",
+      "s0214",
+      "s0298"
+    ],
+    "wrong_owner": [
+      "bb_f_development_wrong_owner"
+    ]
+  }
+}

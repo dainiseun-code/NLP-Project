@@ -1,0 +1,31 @@
+{
+  "schema_version": "nlp3-stage7-binary-review-policy-v1",
+  "protocol": "blinded-binary-success-v1",
+  "judges": {
+    "judge-luna-v1": {
+      "id": "gpt-6-luna",
+      "providerID": "openai",
+      "variant": "high"
+    },
+    "judge-deepseek-v1": {
+      "id": "deepseek-flash",
+      "providerID": "deepseek",
+      "variant": "high"
+    }
+  },
+  "adjudicator": {
+    "role": "nlp_orchestrator",
+    "id": "gpt-6.1-terra",
+    "providerID": "openai",
+    "variant": "xhigh"
+  },
+  "success_definition": "Success means the output takes the expected action; for a draft, addresses the right recipient and includes the required meaning while avoiding the forbidden meaning; for clarify or unsupported, gives the correct action and a true, specific reason. Partial correctness is failure. The frozen requirements are the standard.",
+  "evidence_rule": "Give a short reason for every judgment. For a failure, provide one exact excerpt from the output, or identify the omitted requirement. You may wrap the excerpt in quotation marks; the wrapping is ignored when the excerpt is checked. Do not invent evidence.",
+  "adjudication": "Two judges decide success or failure independently. If both agree, that outcome is final and no adjudicator is used, even when their reasons differ. If they disagree, the orchestrator may add one evidence-bound binary adjudication. A missing or invalid judgment leaves the packet unmeasured; adjudication cannot replace a missing judge.",
+  "disagreement": "Two judges decide success or failure independently. If both agree, that outcome is final and no adjudicator is used, even when their reasons differ. If they disagree, the orchestrator may add one evidence-bound binary adjudication. A missing or invalid judgment leaves the packet unmeasured; adjudication cannot replace a missing judge.",
+  "blinding": "One anonymous output per fresh session. The packet contains the request, full eligible context, frozen requirements, the success definition and one output. It omits condition, prompt arm, binding, model, category, scenario, family, snapshot, provenance, sibling outputs, the other judgment, repository and development conversation.",
+  "dimensions": {
+    "task_success": "Does the output fulfill the frozen task requirements as a whole? Partial correctness is failure."
+  },
+  "claims": "Stage 7 binary semantic review of the adopted 2x2 run. Synthetic, model-reviewed development evidence; human annotation pending."
+}

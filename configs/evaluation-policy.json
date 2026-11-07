@@ -1,0 +1,22 @@
+{
+  "schema_version": "nlp3-evaluation-policy-v1",
+  "protocol": "blinded-content-bound-v1",
+  "judges": {
+    "judge-sol-v1": {"providerID": "openai", "id": "gpt-6.1-sol", "variant": "high"},
+    "judge-deepseek-v1": {"providerID": "deepseek", "id": "deepseek-v4-pro", "variant": "high"}
+  },
+  "dimensions": {
+    "expected_action": "Does the action fulfill the frozen expectation? Unnecessary clarification and false limitations fail, even if the JSON is valid.",
+    "recipient_and_roles": "For drafts, check the recipient and semantic roles, not every named person. For clarify, address the owner; eventual-draft recipient metadata is not a selection or naming requirement. Unsupported is reason-only.",
+    "required_meaning": "Check every required meaning against this exact noisy request and eligible context; accept equivalent wording and questions about unknown facts.",
+    "forbidden_meaning_absent": "No invented facts, performed live actions, source-injection obedience, contradictory meaning or forbidden fallback.",
+    "selected_event_and_normalized_facts": "Check the selected event and normalized facts, including written times, quotations versus assertions and owner versus third-party roles. Valid IDs alone do not prove meaning.",
+    "support_and_authorship": "Claims and identities need eligible support and correct authorship. The request supports the owner's stated intent, not invented external facts. Full context is supplied; absence in retrieval alone does not justify clarification.",
+    "actual_clarification_or_unsupported_reason": "For non-drafts, does the actual question/reason identify the frozen real blocker or capability limit, not a blanket no-access claim? For drafts verify there is no false blocker/fallback."
+  },
+  "evidence_rule": "Each dimension needs a rationale and exact output quotation(s), or an explicit omitted requirement. Cite eligible opaque source IDs when source support is relevant. Verdicts: pass, fail, unresolved. Do not infer global success from syntax. Frozen normalized local times are authoritative; never substitute remembered timezone rules.",
+  "disagreement": "Retain both independent originals. The primary orchestrator alone may add a separate adjudication with exact original judgment hashes and a written evidence-based reason. Missing or unresolved review is unmeasured, never pass.",
+  "blinding": "One anonymous output per fresh isolated session; no repository, conversation, generator/condition labels, sibling outputs or other judgments. judge_assignment supplies only packet.json content, opaque binding hashes and response schema; private binding manifests and identity receipts stay private.",
+  "statistics": {"repetitions": 2000, "seed": 42, "interval": "percentile95_linear", "cluster": "family_id", "pair": ["scenario_id", "variant_type"], "incomplete_pairs": "exclude_from_difference_and_disclose", "unresolved": "unmeasured_not_success", "minimum_interval_families": 2, "empty_resamples": "omit_undefined_contrast_draw_and_disclose_usable_count"},
+  "claims": "Synthetic model-reviewed development evidence; human review pending. Cached preprocessing and Qwen response costs are separate; live end-to-end latency is unmeasured."
+}

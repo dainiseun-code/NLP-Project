@@ -1,0 +1,21 @@
+{
+  "schema_version": "nlp3-timezone-diagnostic-v1",
+  "status": "resolved_primary_confirmed_current_iana_tzif_pinned",
+  "timezone": "America/Vancouver",
+  "tzdb_version": "2026e",
+  "tzif_sha256": "e182e20ec67c46a7dd0aedb3d45fb1395edcb14ff2af2ac694a5776b307bed31",
+  "observed_request_local": "2026-11-02T09:00:00-07:00",
+  "observed_early_event_local": "2026-11-03T15:00:00-07:00",
+  "observed_late_event_local": "2026-11-03T16:00:00-07:00",
+  "failed_assertion": "Expected 2026-11-02T08:00:00-08:00 from prior primary example; actual 09:00-07:00",
+  "official_source": "https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time",
+  "source_data_altered": false,
+  "impacted_requirement_ids": [
+    "m0116_*",
+    "m0108_*",
+    "m0120_*",
+    "m0208_*"
+  ],
+  "checks_before_failure": "request bytes/context bytes/IDs/FKs/snapshot members/current versions/time cutoffs/entities/pairing/exclusions/order/budget binding passed; failed timezone example before final manifest verification",
+  "resolution": "reject prior -08 assumptions, retain source bytes; m0116 draft15-07, scheduled late16-07; old annotations preserved with rejection reasons"
+}

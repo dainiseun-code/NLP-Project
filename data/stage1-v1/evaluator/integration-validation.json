@@ -1,0 +1,205 @@
+{
+  "schema_version": "nlp3-data-integration-v3-primary",
+  "status": "pass",
+  "kind": "installed_public_loader_pinned_temporal_and_relocated_software_integration_no_models",
+  "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+  "distribution": "messaging-nlp 0.1.0",
+  "source_import": "normal installed distribution import; no src/sys.path/PYTHONPATH injection",
+  "requests_validated": 123,
+  "installed_integration_tests_passed": 2,
+  "relocated_selected_data_and_installed_tests_passed": 15,
+  "checks": [
+    "installed public loader opens exactly five public JSONL files; Path.open guard rejects evaluator/other reads",
+    "all123 actual request bundles match independently specified dictionary membership/eligibility/version oracle",
+    "trusted retained identity file and policy reconciled before TimezoneBinding construction",
+    "installed retained TZif normalization and Sunday November1-to-November8 local boundaries",
+    "wrong IANA identity, wrong hash and obsolete bare path/hash keywords rejected",
+    "relocated copy contains no Old-version, local src, Git or model files; same installed distribution available under isolated Python"
+  ],
+  "input_bindings": {
+    "tests/test_study_data.py": "9e598056218f75d6ac74395ce1b1caa275e88facdf88255c4564b2f79a9722be",
+    "configs/study-policy.json": "b6ebb98ccba4db741e54c203df296205cb406bd9163846b7c4e577f0a7ddc8b4",
+    "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+  },
+  "observed_installed_module_bindings": {
+    "messaging_nlp.context": {
+      "sha256": "13a66d183ce89f6aa74a60f1e4d9eeac008e776bac6c5f0993e6b7262567bfee",
+      "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+    },
+    "messaging_nlp.contracts": {
+      "sha256": "08db083552a16a155444d114d880043ff4deec9d658805dbbd6e5a77bc3e1fea",
+      "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+    },
+    "messaging_nlp.io": {
+      "sha256": "4436cf2c3f3d1cd8f361eccbca7d70d6e363533b62f6a4db9a36d7efee3b6ed6",
+      "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+    },
+    "messaging_nlp.temporal": {
+      "sha256": "b8ae68ef2ee62ae2931d3d7ac90ea926fb20a8afb850a7e2d5650a41b76689c2",
+      "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+    }
+  },
+  "not_checked": [
+    "fresh relocated wheel install",
+    "future prompt renderer",
+    "outcome review or model behavior",
+    "fresh stable DATA/PROTOCOL review and final primary acceptance"
+  ],
+  "historical_receipts": [
+    {
+      "original_serialized_sha256": "2c7c4d7173815156b1b1cec1424b8d0de783bfdd63a519104c27f6e0186af7f9",
+      "preservation": "Original pre-acceptance receipt retained structurally, recoverable with json.dumps(ensure_ascii=False, indent=2) plus newline. Its then-pending review status is historical.",
+      "receipt": {
+        "schema_version": "nlp3-data-integration-v3",
+        "status": "pass",
+        "kind": "installed_public_loader_pinned_temporal_and_relocated_software_integration_no_models",
+        "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+        "distribution": "messaging-nlp 0.1.0",
+        "source_import": "normal installed distribution import; no src/sys.path/PYTHONPATH injection",
+        "requests_validated": 123,
+        "installed_integration_tests_passed": 2,
+        "relocated_selected_data_and_installed_tests_passed": 15,
+        "checks": [
+          "installed public loader opens exactly five public JSONL files; Path.open guard rejects evaluator/other reads",
+          "all123 actual request bundles match independently specified dictionary membership/eligibility/version oracle",
+          "trusted retained identity file and policy reconciled before TimezoneBinding construction",
+          "installed retained TZif normalization and Sunday November1-to-November8 local boundaries",
+          "wrong IANA identity, wrong hash and obsolete bare path/hash keywords rejected",
+          "relocated copy contains no Old-version, local src, Git or model files; same installed distribution available under isolated Python"
+        ],
+        "input_bindings": {
+          "tests/test_study_data.py": "6c599530ce75a3772d560738565a9949efba91d1a6b20bf5dfa00f517e90d6eb",
+          "configs/study-policy.json": "ca93783c1fca06b5a163c2c09785ea91147d32d059cc20512ec5fdd4e25e6190",
+          "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+        },
+        "observed_installed_module_bindings": {
+          "messaging_nlp.context": {
+            "sha256": "13a66d183ce89f6aa74a60f1e4d9eeac008e776bac6c5f0993e6b7262567bfee",
+            "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+          },
+          "messaging_nlp.contracts": {
+            "sha256": "08db083552a16a155444d114d880043ff4deec9d658805dbbd6e5a77bc3e1fea",
+            "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+          },
+          "messaging_nlp.io": {
+            "sha256": "4436cf2c3f3d1cd8f361eccbca7d70d6e363533b62f6a4db9a36d7efee3b6ed6",
+            "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+          },
+          "messaging_nlp.temporal": {
+            "sha256": "b8ae68ef2ee62ae2931d3d7ac90ea926fb20a8afb850a7e2d5650a41b76689c2",
+            "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+          }
+        },
+        "not_checked": [
+          "fresh relocated wheel install",
+          "future prompt renderer",
+          "outcome review or model behavior",
+          "fresh stable DATA/PROTOCOL review and final primary acceptance"
+        ],
+        "historical_receipts": [
+          {
+            "original_serialized_sha256": "7fde106e6c32c9402928784ba4086b712f338fe9bb7b3299d77c829829acb895",
+            "preservation": "Previous installed integration receipt retained structurally with its original direct-source receipt nested intact. Current v4 gates rerun as stated above.",
+            "receipt": {
+              "schema_version": "nlp3-data-integration-v2",
+              "status": "pass",
+              "kind": "installed_public_loader_pinned_temporal_and_relocated_software_integration_no_models",
+              "command": "uv run --locked --offline --no-sync python tests/test_study_data.py -v",
+              "distribution": "messaging-nlp 0.1.0",
+              "source_import": "normal installed distribution import; no src/sys.path/PYTHONPATH injection",
+              "requests_validated": 123,
+              "installed_integration_tests_passed": 2,
+              "relocated_selected_data_and_installed_tests_passed": 14,
+              "checks": [
+                "installed public loader opens exactly five public JSONL files; Path.open guard rejects evaluator/other reads",
+                "all123 actual request bundles match independently specified dictionary membership/eligibility/version oracle",
+                "trusted retained identity file and policy reconciled before TimezoneBinding construction",
+                "installed retained TZif normalization and Sunday November1-to-November8 local boundaries",
+                "wrong IANA identity, wrong hash and obsolete bare path/hash keywords rejected",
+                "relocated copy contains no Old-version, local src, Git or model files; same installed distribution available under isolated Python"
+              ],
+              "input_bindings": {
+                "tests/test_study_data.py": "cba792e5e036a43e736f16d2b702c55a6d2136344faa5dc8b970708187c4dfe5",
+                "configs/study-policy.json": "94cbc8f735554f5877454e18856a800ef7e55f0523cb8092c0907affb769a24e",
+                "docs/stage1-budget-opening.json": "3f7a172dd44af30695f9171555f13070d7408bf1e2ba88d4c2e8e6d17af4f67d"
+              },
+              "observed_installed_module_bindings": {
+                "messaging_nlp.context": {
+                  "sha256": "13a66d183ce89f6aa74a60f1e4d9eeac008e776bac6c5f0993e6b7262567bfee",
+                  "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+                },
+                "messaging_nlp.contracts": {
+                  "sha256": "08db083552a16a155444d114d880043ff4deec9d658805dbbd6e5a77bc3e1fea",
+                  "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+                },
+                "messaging_nlp.io": {
+                  "sha256": "4436cf2c3f3d1cd8f361eccbca7d70d6e363533b62f6a4db9a36d7efee3b6ed6",
+                  "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+                },
+                "messaging_nlp.temporal": {
+                  "sha256": "b8ae68ef2ee62ae2931d3d7ac90ea926fb20a8afb850a7e2d5650a41b76689c2",
+                  "identity_kind": "installed editable distribution source at check time; retained source bytes in project, not a new wheel installation"
+                }
+              },
+              "not_checked": [
+                "fresh relocated wheel install",
+                "future prompt renderer",
+                "outcome review or model behavior",
+                "final independent Pro code/protocol acceptance"
+              ],
+              "historical_receipts": [
+                {
+                  "original_serialized_sha256": "7ef0f8aab4ff8cafc90f34f636ea5ca27452e5852872d0c6b2bf12d28eca3ba9",
+                  "preservation": "Original direct-source-import receipt retained structurally, recoverable with json.dumps(indent=2) plus newline. It is not an installed check and was not rerun.",
+                  "receipt": {
+                    "schema_version": "nlp3-data-integration-v1",
+                    "status": "pass",
+                    "kind": "real_public_loader_and_pinned_temporal_software_integration_no_models",
+                    "requests_validated": 123,
+                    "source_import": "src via sys.path; installed console script not yet available at time checked",
+                    "checks": [
+                      "CLI.main public validation returns0",
+                      "all123 actual request bundles validate",
+                      "retained TZif normalization correct",
+                      "Sunday local boundaries Nov1 toNov8",
+                      "strict later-than-now and exclusive week-end",
+                      "stale TZif hash rejected"
+                    ],
+                    "not_checked": [
+                      "installed entrypoint pending lead package installation",
+                      "independent task annotation acceptance",
+                      "prompt rendering or model execution"
+                    ],
+                    "command": "UV_CACHE_DIR=/tmp/nlp3-stage1-eval-uv-cache uv run --locked --offline --no-sync python <inline source-import integration probe>"
+                  }
+                }
+              ],
+              "model_execution": false
+            }
+          }
+        ],
+        "model_execution": false,
+        "active_requirement_version": "stage1-source-authored-v4"
+      }
+    }
+  ],
+  "model_execution": false,
+  "active_requirement_version": "stage1-source-authored-v4",
+  "primary_stage1_acceptance": {
+    "status": "accepted_software_data_protocol_not_model_quality",
+    "reviews": [
+      "software-review-1",
+      "software-review-followup",
+      "data-protocol-review"
+    ],
+    "review_receipts": {
+      "software-review-1": "d5ae6141544ddcf9edec744f758207a6f5c561ae3d2b98b5ae242b3e7ecfdf0f",
+      "software-review-followup": "4e0a4eab8e5b316c7c570068d05794c5d76f18cfe21139c3cf2963bd4947af4f",
+      "data-protocol-review": "65ad2bf54a8aa87727f68eff03ec1adde8887fe8478cfe1bdb4163ad6a3c3799"
+    },
+    "primary_gate": "runs/stage1-resume-20261027/primary-full-gate-v4.log",
+    "metadata_closure": "Final changes only status assertions and documented pre-existing non-draft/human-review conventions; source requests/context/gold/requirements/order unchanged; final metadata gate follows.",
+    "human_review_completed": false,
+    "execution_frozen": false
+  }
+}

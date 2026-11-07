@@ -1,0 +1,44 @@
+# Include the public software-check context in source distributions.
+# These rules select archive contents; they do not remove working files.
+include .gitattributes .gitignore .python-version uv.lock
+include README.md REPORT.md LICENSE LICENSE-DATA DATA-LICENSE.md
+include SECURITY.md THIRD-PARTY-NOTICES.md
+include configs/evaluation-policy.json
+include configs/stage7-binary-review-policy.json
+include configs/study-policy.json
+include data/stage1-v1/selection-manifest.json
+recursive-include data/stage1-v1/public *.jsonl
+include data/stage1-v1/evaluator/exclusions.jsonl
+include data/stage1-v1/evaluator/roster.jsonl
+include data/stage1-v1/evaluator/task-requirements.jsonl
+include data/stage1-v1/evaluator/integration-validation.json
+include data/stage1-v1/evaluator/timezone-diagnostic.json
+include data/stage1-v1/evaluator/verification.json
+include data/stage1-v1/evaluator/gold/annotation_status.jsonl
+include data/stage1-v1/evaluator/gold/entities.jsonl
+include data/stage1-v1/provenance/timezones/America_Vancouver.tzif
+include data/stage1-v1/provenance/timezones/identity.json
+include docs/study-details.md
+include docs/stage1-decisions.md
+include docs/stage4b-evaluation-contract.md
+include docs/stage7-capability-strata.md
+recursive-include docs/figures *.svg *.py
+include environments/encoder/pyproject.toml environments/encoder/uv.lock
+include environments/qwen/pyproject.toml environments/qwen/uv.lock
+recursive-include environments/encoder/tests *.py
+recursive-include examples *.py
+recursive-include tests *.py *.txt
+include .github/workflows/public-checks.yml
+prune to-be-moved
+prune .claude
+prune .jj
+prune models
+prune runs
+prune docs/provenance
+prune data/stage1-v1/evaluator/provenance
+exclude Alexa_DS_Resume_2page.tex Applied_Science_LLM_Resume.tex
+exclude Applied_Science_ML_Resume.json Applied_Science_ML_Resume.md
+exclude Applied_Science_ML_Resume.pdf Applied_Science_ML_Resume.tex
+exclude Pharma_Industry_CV.tex Questions.md resume-comments.md
+exclude ah-review-test.md chapter_new.txt README-Original.md REPORT-Original.md
+global-exclude *.py[cod] .DS_Store
